@@ -429,6 +429,7 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+	  HAL_GPIO_ReadPin(GPIOx, GPIO_Pin)
 	  if (count>600)
 	  {
 		  count=1;
@@ -439,7 +440,7 @@ int main(void)
 	  sec(count,state,countmin);
 	  if(countmin%5==0) min(countmin);
 	  count++;
-	  HAL_Delay(1);
+	  HAL_Delay(10);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */

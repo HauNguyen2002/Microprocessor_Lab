@@ -1,20 +1,11 @@
-16:05:51 **** Incremental Build of configuration Debug for project Ex6 ****
+17:39:32 **** Incremental Build of configuration Debug for project Test Blink ****
 make -j8 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc -o "Ex6.elf" @"objects.list"   -mcpu=cortex-m3 -T"F:\School\year3_sem1\Microprocessor\STM32 files\Lab\Lab1\Ex6\STM32F103C6UX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Ex6.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: Ex6.elf
- 
-arm-none-eabi-size   Ex6.elf 
-arm-none-eabi-objdump -h -S  Ex6.elf  > "Ex6.list"
-arm-none-eabi-objcopy  -O ihex  Ex6.elf  "Ex6.hex"
-arm-none-eabi-objcopy  -O binary  Ex6.elf  "Ex6.bin"
-   text	   data	    bss	    dec	    hex	filename
-   6140	     20	   1572	   7732	   1e34	Ex6.elf
-Finished building: default.size.stdout
- 
-Finished building: Ex6.hex
-Finished building: Ex6.bin
-Finished building: Ex6.list
- 
- 
- 
+arm-none-eabi-gcc -o "Test Blink.elf" @"objects.list"   -mcpu=cortex-m3 -T"F:\School\year3_sem1\Microprocessor\Lab1\Test Blink\STM32F103C6UX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Test Blink.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+c:\st\stm32cubeide_1.7.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\bin\ld.exe: ./Core/Src/fsm_manual.o: in function `fsm_manual_run':
+F:/School/year3_sem1/Microprocessor/Lab1/Test Blink/Debug/../Core/Src/fsm_manual.c:30: undefined reference to `status'
+c:\st\stm32cubeide_1.7.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\bin\ld.exe: ./Core/Src/fsm_manual.o: in function `fsm_automatic_run':
+F:/School/year3_sem1/Microprocessor/Lab1/Test Blink/Debug/../Core/Src/fsm_manual.c:61: undefined reference to `status'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:68: Test Blink.elf] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
