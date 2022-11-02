@@ -64,8 +64,8 @@ all: main-build
 main-build: Ex5.elf secondary-outputs
 
 # Tool invocations
-Ex5.elf: $(OBJS) $(USER_OBJS) F:\School\year3_sem1\Microprocessor\STM32\ files\Lab\Lab1\Ex5\STM32F103C6UX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "Ex5.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"F:\School\year3_sem1\Microprocessor\STM32 files\Lab\Lab1\Ex5\STM32F103C6UX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Ex5.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Ex5.elf: $(OBJS) $(USER_OBJS) F:\School\year3_sem1\Microprocessor\Lab1\Lab\Lab1\Ex5\STM32F103C6UX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "Ex5.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"F:\School\year3_sem1\Microprocessor\Lab1\Lab\Lab1\Ex5\STM32F103C6UX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Ex5.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

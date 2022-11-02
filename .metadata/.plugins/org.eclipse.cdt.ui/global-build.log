@@ -1,11 +1,19 @@
-17:39:32 **** Incremental Build of configuration Debug for project Test Blink ****
+22:48:00 **** Build of configuration Debug for project Ex5 ****
 make -j8 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc -o "Test Blink.elf" @"objects.list"   -mcpu=cortex-m3 -T"F:\School\year3_sem1\Microprocessor\Lab1\Test Blink\STM32F103C6UX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Test Blink.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-c:\st\stm32cubeide_1.7.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\bin\ld.exe: ./Core/Src/fsm_manual.o: in function `fsm_manual_run':
-F:/School/year3_sem1/Microprocessor/Lab1/Test Blink/Debug/../Core/Src/fsm_manual.c:30: undefined reference to `status'
-c:\st\stm32cubeide_1.7.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\bin\ld.exe: ./Core/Src/fsm_manual.o: in function `fsm_automatic_run':
-F:/School/year3_sem1/Microprocessor/Lab1/Test Blink/Debug/../Core/Src/fsm_manual.c:61: undefined reference to `status'
-collect2.exe: error: ld returned 1 exit status
-make: *** [makefile:68: Test Blink.elf] Error 1
-"make -j8 all" terminated with exit code 2. Build might be incomplete.
+arm-none-eabi-gcc -o "Ex5.elf" @"objects.list"   -mcpu=cortex-m3 -T"F:\School\year3_sem1\Microprocessor\Lab1\Lab\Lab1\Ex5\STM32F103C6UX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Ex5.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Ex5.elf
+ 
+arm-none-eabi-size   Ex5.elf 
+arm-none-eabi-objdump -h -S  Ex5.elf  > "Ex5.list"
+arm-none-eabi-objcopy  -O ihex  Ex5.elf  "Ex5.hex"
+arm-none-eabi-objcopy  -O binary  Ex5.elf  "Ex5.bin"
+   text	   data	    bss	    dec	    hex	filename
+   5332	     20	   1572	   6924	   1b0c	Ex5.elf
+Finished building: default.size.stdout
+ 
+Finished building: Ex5.bin
+Finished building: Ex5.hex
+ 
+ 
+Finished building: Ex5.list
+ 
