@@ -1,19 +1,20 @@
-22:48:00 **** Build of configuration Debug for project Ex5 ****
+08:33:06 **** Incremental Build of configuration Debug for project Ex8 ****
 make -j8 all 
-arm-none-eabi-gcc -o "Ex5.elf" @"objects.list"   -mcpu=cortex-m3 -T"F:\School\year3_sem1\Microprocessor\Lab1\Lab\Lab1\Ex5\STM32F103C6UX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Ex5.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: Ex5.elf
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Ex8.elf" @"objects.list"   -mcpu=cortex-m3 -T"F:\School\year3_sem1\Microprocessor\Lab2\Ex8\STM32F103C6UX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Ex8.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Ex8.elf
  
-arm-none-eabi-size   Ex5.elf 
-arm-none-eabi-objdump -h -S  Ex5.elf  > "Ex5.list"
-arm-none-eabi-objcopy  -O ihex  Ex5.elf  "Ex5.hex"
-arm-none-eabi-objcopy  -O binary  Ex5.elf  "Ex5.bin"
+arm-none-eabi-size   Ex8.elf 
+arm-none-eabi-objdump -h -S  Ex8.elf  > "Ex8.list"
+arm-none-eabi-objcopy  -O ihex  Ex8.elf  "Ex8.hex"
+arm-none-eabi-objcopy  -O binary  Ex8.elf  "Ex8.bin"
    text	   data	    bss	    dec	    hex	filename
-   5332	     20	   1572	   6924	   1b0c	Ex5.elf
+   9044	     64	   1704	  10812	   2a3c	Ex8.elf
 Finished building: default.size.stdout
  
-Finished building: Ex5.bin
-Finished building: Ex5.hex
+Finished building: Ex8.hex
+Finished building: Ex8.bin
  
  
-Finished building: Ex5.list
+Finished building: Ex8.list
  
