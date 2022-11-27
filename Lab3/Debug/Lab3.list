@@ -27,23 +27,23 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   ALLOC
  11 .ARM.attributes 00000029  00000000  00000000  00020058  2**0
                   CONTENTS, READONLY
- 12 .debug_info   00009225  00000000  00000000  00020081  2**0
+ 12 .debug_info   000091c5  00000000  00000000  00020081  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 13 .debug_abbrev 00001a79  00000000  00000000  000292a6  2**0
+ 13 .debug_abbrev 00001a79  00000000  00000000  00029246  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 14 .debug_aranges 00000a48  00000000  00000000  0002ad20  2**3
+ 14 .debug_aranges 00000a48  00000000  00000000  0002acc0  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 15 .debug_ranges 00000948  00000000  00000000  0002b768  2**3
+ 15 .debug_ranges 00000948  00000000  00000000  0002b708  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 16 .debug_macro  00016ad8  00000000  00000000  0002c0b0  2**0
+ 16 .debug_macro  00016ab5  00000000  00000000  0002c050  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_line   0000b29c  00000000  00000000  00042b88  2**0
+ 17 .debug_line   0000b284  00000000  00000000  00042b05  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_str    00082217  00000000  00000000  0004de24  2**0
+ 18 .debug_str    00082217  00000000  00000000  0004dd89  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .comment      00000053  00000000  00000000  000d003b  2**0
+ 19 .comment      00000053  00000000  00000000  000cffa0  2**0
                   CONTENTS, READONLY
- 20 .debug_frame  0000289c  00000000  00000000  000d0090  2**2
+ 20 .debug_frame  0000289c  00000000  00000000  000cfff4  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -1293,7 +1293,7 @@ void auto2_run()
  800097c:	e08a      	b.n	8000a94 <auto2_run+0x1b0>
 			setCount2(100);
  800097e:	2064      	movs	r0, #100	; 0x64
- 8000980:	f000 fbba 	bl	80010f8 <setCount2>
+ 8000980:	f000 fc2c 	bl	80011dc <setCount2>
 		break;
  8000984:	e081      	b.n	8000a8a <auto2_run+0x1a6>
 		if(count2_flag==1)
@@ -1365,7 +1365,7 @@ void auto2_run()
  80009fe:	e049      	b.n	8000a94 <auto2_run+0x1b0>
 			setCount2(100);
  8000a00:	2064      	movs	r0, #100	; 0x64
- 8000a02:	f000 fb79 	bl	80010f8 <setCount2>
+ 8000a02:	f000 fbeb 	bl	80011dc <setCount2>
 		break;
  8000a06:	e042      	b.n	8000a8e <auto2_run+0x1aa>
 		if(count2_flag==1)
@@ -1437,7 +1437,7 @@ void auto2_run()
  8000a80:	e008      	b.n	8000a94 <auto2_run+0x1b0>
 			setCount2(100);
  8000a82:	2064      	movs	r0, #100	; 0x64
- 8000a84:	f000 fb38 	bl	80010f8 <setCount2>
+ 8000a84:	f000 fbaa 	bl	80011dc <setCount2>
 		break;
  8000a88:	e003      	b.n	8000a92 <auto2_run+0x1ae>
 		break;
@@ -1613,7 +1613,7 @@ int main(void)
  8000b9c:	f000 fa98 	bl	80010d0 <setCount>
   setCount2(50);
  8000ba0:	2032      	movs	r0, #50	; 0x32
- 8000ba2:	f000 faa9 	bl	80010f8 <setCount2>
+ 8000ba2:	f000 fb1b 	bl	80011dc <setCount2>
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
@@ -1973,7 +1973,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 	sideRun();
  8000d9c:	f000 f97e 	bl	800109c <sideRun>
 	countRun();
- 8000da0:	f000 f9be 	bl	8001120 <countRun>
+ 8000da0:	f000 f9aa 	bl	80010f8 <countRun>
 	count2Run();
  8000da4:	f000 fa2e 	bl	8001204 <count2Run>
 	getMODEInput();
@@ -2406,156 +2406,157 @@ void setCount(int duration)
  80010f0:	200000c0 	.word	0x200000c0
  80010f4:	200000b0 	.word	0x200000b0
 
-080010f8 <setCount2>:
+080010f8 <countRun>:
 
-void setCount2(int duration)
-{
- 80010f8:	b480      	push	{r7}
- 80010fa:	b083      	sub	sp, #12
- 80010fc:	af00      	add	r7, sp, #0
- 80010fe:	6078      	str	r0, [r7, #4]
-	count2_count=duration;
- 8001100:	4a05      	ldr	r2, [pc, #20]	; (8001118 <setCount2+0x20>)
- 8001102:	687b      	ldr	r3, [r7, #4]
- 8001104:	6013      	str	r3, [r2, #0]
-	count2_flag=0;
- 8001106:	4b05      	ldr	r3, [pc, #20]	; (800111c <setCount2+0x24>)
- 8001108:	2200      	movs	r2, #0
- 800110a:	601a      	str	r2, [r3, #0]
-}
- 800110c:	bf00      	nop
- 800110e:	370c      	adds	r7, #12
- 8001110:	46bd      	mov	sp, r7
- 8001112:	bc80      	pop	{r7}
- 8001114:	4770      	bx	lr
- 8001116:	bf00      	nop
- 8001118:	200000c4 	.word	0x200000c4
- 800111c:	200000b4 	.word	0x200000b4
-
-08001120 <countRun>:
 
 void countRun()
 {
- 8001120:	b580      	push	{r7, lr}
- 8001122:	af00      	add	r7, sp, #0
+ 80010f8:	b580      	push	{r7, lr}
+ 80010fa:	af00      	add	r7, sp, #0
 	if(count_count>0) count_count--;
- 8001124:	4b2a      	ldr	r3, [pc, #168]	; (80011d0 <countRun+0xb0>)
- 8001126:	681b      	ldr	r3, [r3, #0]
- 8001128:	2b00      	cmp	r3, #0
- 800112a:	dd04      	ble.n	8001136 <countRun+0x16>
- 800112c:	4b28      	ldr	r3, [pc, #160]	; (80011d0 <countRun+0xb0>)
- 800112e:	681b      	ldr	r3, [r3, #0]
- 8001130:	3b01      	subs	r3, #1
- 8001132:	4a27      	ldr	r2, [pc, #156]	; (80011d0 <countRun+0xb0>)
- 8001134:	6013      	str	r3, [r2, #0]
+ 80010fc:	4b2a      	ldr	r3, [pc, #168]	; (80011a8 <countRun+0xb0>)
+ 80010fe:	681b      	ldr	r3, [r3, #0]
+ 8001100:	2b00      	cmp	r3, #0
+ 8001102:	dd04      	ble.n	800110e <countRun+0x16>
+ 8001104:	4b28      	ldr	r3, [pc, #160]	; (80011a8 <countRun+0xb0>)
+ 8001106:	681b      	ldr	r3, [r3, #0]
+ 8001108:	3b01      	subs	r3, #1
+ 800110a:	4a27      	ldr	r2, [pc, #156]	; (80011a8 <countRun+0xb0>)
+ 800110c:	6013      	str	r3, [r2, #0]
 	if(mode_flag==1)
- 8001136:	4b27      	ldr	r3, [pc, #156]	; (80011d4 <countRun+0xb4>)
- 8001138:	681b      	ldr	r3, [r3, #0]
- 800113a:	2b01      	cmp	r3, #1
- 800113c:	d13e      	bne.n	80011bc <countRun+0x9c>
+ 800110e:	4b27      	ldr	r3, [pc, #156]	; (80011ac <countRun+0xb4>)
+ 8001110:	681b      	ldr	r3, [r3, #0]
+ 8001112:	2b01      	cmp	r3, #1
+ 8001114:	d13e      	bne.n	8001194 <countRun+0x9c>
 	{
 		status=RED;
- 800113e:	4b26      	ldr	r3, [pc, #152]	; (80011d8 <countRun+0xb8>)
- 8001140:	2201      	movs	r2, #1
- 8001142:	601a      	str	r2, [r3, #0]
+ 8001116:	4b26      	ldr	r3, [pc, #152]	; (80011b0 <countRun+0xb8>)
+ 8001118:	2201      	movs	r2, #1
+ 800111a:	601a      	str	r2, [r3, #0]
 		auto1=WAIT1;
- 8001144:	4b25      	ldr	r3, [pc, #148]	; (80011dc <countRun+0xbc>)
- 8001146:	2208      	movs	r2, #8
- 8001148:	601a      	str	r2, [r3, #0]
+ 800111c:	4b25      	ldr	r3, [pc, #148]	; (80011b4 <countRun+0xbc>)
+ 800111e:	2208      	movs	r2, #8
+ 8001120:	601a      	str	r2, [r3, #0]
 		auto2=WAIT2;
- 800114a:	4b25      	ldr	r3, [pc, #148]	; (80011e0 <countRun+0xc0>)
- 800114c:	220f      	movs	r2, #15
- 800114e:	601a      	str	r2, [r3, #0]
+ 8001122:	4b25      	ldr	r3, [pc, #148]	; (80011b8 <countRun+0xc0>)
+ 8001124:	220f      	movs	r2, #15
+ 8001126:	601a      	str	r2, [r3, #0]
 		count_count=0;
- 8001150:	4b1f      	ldr	r3, [pc, #124]	; (80011d0 <countRun+0xb0>)
- 8001152:	2200      	movs	r2, #0
- 8001154:	601a      	str	r2, [r3, #0]
+ 8001128:	4b1f      	ldr	r3, [pc, #124]	; (80011a8 <countRun+0xb0>)
+ 800112a:	2200      	movs	r2, #0
+ 800112c:	601a      	str	r2, [r3, #0]
 		count2_count=0;
- 8001156:	4b23      	ldr	r3, [pc, #140]	; (80011e4 <countRun+0xc4>)
- 8001158:	2200      	movs	r2, #0
- 800115a:	601a      	str	r2, [r3, #0]
+ 800112e:	4b23      	ldr	r3, [pc, #140]	; (80011bc <countRun+0xc4>)
+ 8001130:	2200      	movs	r2, #0
+ 8001132:	601a      	str	r2, [r3, #0]
 		timer_flag=1;
- 800115c:	4b22      	ldr	r3, [pc, #136]	; (80011e8 <countRun+0xc8>)
- 800115e:	2201      	movs	r2, #1
- 8001160:	601a      	str	r2, [r3, #0]
+ 8001134:	4b22      	ldr	r3, [pc, #136]	; (80011c0 <countRun+0xc8>)
+ 8001136:	2201      	movs	r2, #1
+ 8001138:	601a      	str	r2, [r3, #0]
 		mode_flag=0;
- 8001162:	4b1c      	ldr	r3, [pc, #112]	; (80011d4 <countRun+0xb4>)
- 8001164:	2200      	movs	r2, #0
- 8001166:	601a      	str	r2, [r3, #0]
+ 800113a:	4b1c      	ldr	r3, [pc, #112]	; (80011ac <countRun+0xb4>)
+ 800113c:	2200      	movs	r2, #0
+ 800113e:	601a      	str	r2, [r3, #0]
 
 		seg1=0;
- 8001168:	4b20      	ldr	r3, [pc, #128]	; (80011ec <countRun+0xcc>)
- 800116a:	2200      	movs	r2, #0
- 800116c:	601a      	str	r2, [r3, #0]
+ 8001140:	4b20      	ldr	r3, [pc, #128]	; (80011c4 <countRun+0xcc>)
+ 8001142:	2200      	movs	r2, #0
+ 8001144:	601a      	str	r2, [r3, #0]
 		seg2=0;
- 800116e:	4b20      	ldr	r3, [pc, #128]	; (80011f0 <countRun+0xd0>)
- 8001170:	2200      	movs	r2, #0
- 8001172:	601a      	str	r2, [r3, #0]
+ 8001146:	4b20      	ldr	r3, [pc, #128]	; (80011c8 <countRun+0xd0>)
+ 8001148:	2200      	movs	r2, #0
+ 800114a:	601a      	str	r2, [r3, #0]
 		seg3=0;
- 8001174:	4b1f      	ldr	r3, [pc, #124]	; (80011f4 <countRun+0xd4>)
- 8001176:	2200      	movs	r2, #0
- 8001178:	601a      	str	r2, [r3, #0]
+ 800114c:	4b1f      	ldr	r3, [pc, #124]	; (80011cc <countRun+0xd4>)
+ 800114e:	2200      	movs	r2, #0
+ 8001150:	601a      	str	r2, [r3, #0]
 		seg4=0;
- 800117a:	4b1f      	ldr	r3, [pc, #124]	; (80011f8 <countRun+0xd8>)
- 800117c:	2200      	movs	r2, #0
- 800117e:	601a      	str	r2, [r3, #0]
+ 8001152:	4b1f      	ldr	r3, [pc, #124]	; (80011d0 <countRun+0xd8>)
+ 8001154:	2200      	movs	r2, #0
+ 8001156:	601a      	str	r2, [r3, #0]
 
 		HAL_GPIO_WritePin(GPIOA, LED_RED_Pin, 0);
- 8001180:	2200      	movs	r2, #0
- 8001182:	2101      	movs	r1, #1
- 8001184:	481d      	ldr	r0, [pc, #116]	; (80011fc <countRun+0xdc>)
- 8001186:	f000 fc0c 	bl	80019a2 <HAL_GPIO_WritePin>
+ 8001158:	2200      	movs	r2, #0
+ 800115a:	2101      	movs	r1, #1
+ 800115c:	481d      	ldr	r0, [pc, #116]	; (80011d4 <countRun+0xdc>)
+ 800115e:	f000 fc20 	bl	80019a2 <HAL_GPIO_WritePin>
 		HAL_GPIO_WritePin(GPIOA, LED_YELLOW_Pin, 0);
- 800118a:	2200      	movs	r2, #0
- 800118c:	2104      	movs	r1, #4
- 800118e:	481b      	ldr	r0, [pc, #108]	; (80011fc <countRun+0xdc>)
- 8001190:	f000 fc07 	bl	80019a2 <HAL_GPIO_WritePin>
+ 8001162:	2200      	movs	r2, #0
+ 8001164:	2104      	movs	r1, #4
+ 8001166:	481b      	ldr	r0, [pc, #108]	; (80011d4 <countRun+0xdc>)
+ 8001168:	f000 fc1b 	bl	80019a2 <HAL_GPIO_WritePin>
 		HAL_GPIO_WritePin(GPIOA, LED_GREEN_Pin, 0);
- 8001194:	2200      	movs	r2, #0
- 8001196:	2102      	movs	r1, #2
- 8001198:	4818      	ldr	r0, [pc, #96]	; (80011fc <countRun+0xdc>)
- 800119a:	f000 fc02 	bl	80019a2 <HAL_GPIO_WritePin>
+ 800116c:	2200      	movs	r2, #0
+ 800116e:	2102      	movs	r1, #2
+ 8001170:	4818      	ldr	r0, [pc, #96]	; (80011d4 <countRun+0xdc>)
+ 8001172:	f000 fc16 	bl	80019a2 <HAL_GPIO_WritePin>
 		HAL_GPIO_WritePin(GPIOA, led_red_Pin, 0);
- 800119e:	2200      	movs	r2, #0
- 80011a0:	2108      	movs	r1, #8
- 80011a2:	4816      	ldr	r0, [pc, #88]	; (80011fc <countRun+0xdc>)
- 80011a4:	f000 fbfd 	bl	80019a2 <HAL_GPIO_WritePin>
+ 8001176:	2200      	movs	r2, #0
+ 8001178:	2108      	movs	r1, #8
+ 800117a:	4816      	ldr	r0, [pc, #88]	; (80011d4 <countRun+0xdc>)
+ 800117c:	f000 fc11 	bl	80019a2 <HAL_GPIO_WritePin>
 		HAL_GPIO_WritePin(GPIOA, led_yellow_Pin, 0);
- 80011a8:	2200      	movs	r2, #0
- 80011aa:	2120      	movs	r1, #32
- 80011ac:	4813      	ldr	r0, [pc, #76]	; (80011fc <countRun+0xdc>)
- 80011ae:	f000 fbf8 	bl	80019a2 <HAL_GPIO_WritePin>
+ 8001180:	2200      	movs	r2, #0
+ 8001182:	2120      	movs	r1, #32
+ 8001184:	4813      	ldr	r0, [pc, #76]	; (80011d4 <countRun+0xdc>)
+ 8001186:	f000 fc0c 	bl	80019a2 <HAL_GPIO_WritePin>
 		HAL_GPIO_WritePin(GPIOA, led_green_Pin, 0);
- 80011b2:	2200      	movs	r2, #0
- 80011b4:	2110      	movs	r1, #16
- 80011b6:	4811      	ldr	r0, [pc, #68]	; (80011fc <countRun+0xdc>)
- 80011b8:	f000 fbf3 	bl	80019a2 <HAL_GPIO_WritePin>
+ 800118a:	2200      	movs	r2, #0
+ 800118c:	2110      	movs	r1, #16
+ 800118e:	4811      	ldr	r0, [pc, #68]	; (80011d4 <countRun+0xdc>)
+ 8001190:	f000 fc07 	bl	80019a2 <HAL_GPIO_WritePin>
 	}
 	if(count_count==0) count_flag=1;
- 80011bc:	4b04      	ldr	r3, [pc, #16]	; (80011d0 <countRun+0xb0>)
- 80011be:	681b      	ldr	r3, [r3, #0]
- 80011c0:	2b00      	cmp	r3, #0
- 80011c2:	d102      	bne.n	80011ca <countRun+0xaa>
- 80011c4:	4b0e      	ldr	r3, [pc, #56]	; (8001200 <countRun+0xe0>)
- 80011c6:	2201      	movs	r2, #1
- 80011c8:	601a      	str	r2, [r3, #0]
+ 8001194:	4b04      	ldr	r3, [pc, #16]	; (80011a8 <countRun+0xb0>)
+ 8001196:	681b      	ldr	r3, [r3, #0]
+ 8001198:	2b00      	cmp	r3, #0
+ 800119a:	d102      	bne.n	80011a2 <countRun+0xaa>
+ 800119c:	4b0e      	ldr	r3, [pc, #56]	; (80011d8 <countRun+0xe0>)
+ 800119e:	2201      	movs	r2, #1
+ 80011a0:	601a      	str	r2, [r3, #0]
 }
- 80011ca:	bf00      	nop
- 80011cc:	bd80      	pop	{r7, pc}
- 80011ce:	bf00      	nop
- 80011d0:	200000c0 	.word	0x200000c0
- 80011d4:	20000074 	.word	0x20000074
- 80011d8:	2000003c 	.word	0x2000003c
- 80011dc:	20000044 	.word	0x20000044
- 80011e0:	20000048 	.word	0x20000048
- 80011e4:	200000c4 	.word	0x200000c4
- 80011e8:	200000a8 	.word	0x200000a8
- 80011ec:	2000008c 	.word	0x2000008c
- 80011f0:	20000090 	.word	0x20000090
- 80011f4:	20000094 	.word	0x20000094
- 80011f8:	20000098 	.word	0x20000098
- 80011fc:	40010800 	.word	0x40010800
- 8001200:	200000b0 	.word	0x200000b0
+ 80011a2:	bf00      	nop
+ 80011a4:	bd80      	pop	{r7, pc}
+ 80011a6:	bf00      	nop
+ 80011a8:	200000c0 	.word	0x200000c0
+ 80011ac:	20000074 	.word	0x20000074
+ 80011b0:	2000003c 	.word	0x2000003c
+ 80011b4:	20000044 	.word	0x20000044
+ 80011b8:	20000048 	.word	0x20000048
+ 80011bc:	200000c4 	.word	0x200000c4
+ 80011c0:	200000a8 	.word	0x200000a8
+ 80011c4:	2000008c 	.word	0x2000008c
+ 80011c8:	20000090 	.word	0x20000090
+ 80011cc:	20000094 	.word	0x20000094
+ 80011d0:	20000098 	.word	0x20000098
+ 80011d4:	40010800 	.word	0x40010800
+ 80011d8:	200000b0 	.word	0x200000b0
+
+080011dc <setCount2>:
+
+void setCount2(int duration)
+{
+ 80011dc:	b480      	push	{r7}
+ 80011de:	b083      	sub	sp, #12
+ 80011e0:	af00      	add	r7, sp, #0
+ 80011e2:	6078      	str	r0, [r7, #4]
+	count2_count=duration;
+ 80011e4:	4a05      	ldr	r2, [pc, #20]	; (80011fc <setCount2+0x20>)
+ 80011e6:	687b      	ldr	r3, [r7, #4]
+ 80011e8:	6013      	str	r3, [r2, #0]
+	count2_flag=0;
+ 80011ea:	4b05      	ldr	r3, [pc, #20]	; (8001200 <setCount2+0x24>)
+ 80011ec:	2200      	movs	r2, #0
+ 80011ee:	601a      	str	r2, [r3, #0]
+}
+ 80011f0:	bf00      	nop
+ 80011f2:	370c      	adds	r7, #12
+ 80011f4:	46bd      	mov	sp, r7
+ 80011f6:	bc80      	pop	{r7}
+ 80011f8:	4770      	bx	lr
+ 80011fa:	bf00      	nop
+ 80011fc:	200000c4 	.word	0x200000c4
+ 8001200:	200000b4 	.word	0x200000b4
 
 08001204 <count2Run>:
 

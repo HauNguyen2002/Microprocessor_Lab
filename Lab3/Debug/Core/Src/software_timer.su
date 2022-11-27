@@ -3,6 +3,6 @@ software_timer.c:26:6:timerRun	4	static
 software_timer.c:32:6:setSide	16	static
 software_timer.c:38:6:sideRun	4	static
 software_timer.c:44:6:setCount	16	static
-software_timer.c:50:6:setCount2	16	static
-software_timer.c:56:6:countRun	8	static
-software_timer.c:84:6:count2Run	4	static
+software_timer.c:51:6:countRun	8	static
+software_timer.c:79:6:setCount2	16	static
+software_timer.c:85:6:count2Run	4	static
