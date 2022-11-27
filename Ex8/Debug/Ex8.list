@@ -979,12 +979,12 @@ int main(void)
   HAL_TIM_Base_Start_IT(&htim2);
  800080e:	4855      	ldr	r0, [pc, #340]	; (8000964 <main+0x16c>)
  8000810:	f001 f9b0 	bl	8001b74 <HAL_TIM_Base_Start_IT>
-  int hour = 15, minute = 8, second = 50;
- 8000814:	230f      	movs	r3, #15
+  int hour = 8, minute = 50, second = 20;
+ 8000814:	2308      	movs	r3, #8
  8000816:	617b      	str	r3, [r7, #20]
- 8000818:	2308      	movs	r3, #8
+ 8000818:	2332      	movs	r3, #50	; 0x32
  800081a:	613b      	str	r3, [r7, #16]
- 800081c:	2332      	movs	r3, #50	; 0x32
+ 800081c:	2314      	movs	r3, #20
  800081e:	60fb      	str	r3, [r7, #12]
   setTimer0(500);
  8000820:	f44f 70fa 	mov.w	r0, #500	; 0x1f4
@@ -1099,8 +1099,8 @@ int main(void)
  80008d0:	4b29      	ldr	r3, [pc, #164]	; (8000978 <main+0x180>)
  80008d2:	2200      	movs	r2, #0
  80008d4:	601a      	str	r2, [r3, #0]
-		  setTimer1(250);
- 80008d6:	20fa      	movs	r0, #250	; 0xfa
+		  setTimer1(100);
+ 80008d6:	2064      	movs	r0, #100	; 0x64
  80008d8:	f7ff fc52 	bl	8000180 <setTimer1>
 	  }
 	  if(timer3_flag==1)

@@ -262,7 +262,7 @@ int main(void)
   MX_GPIO_Init();
   /* USER CODE BEGIN 2 */
   HAL_TIM_Base_Start_IT(&htim2);
-  int hour = 8, minute = 50, second = 20;
+  int hour = 15, minute = 8, second = 50;
   setTimer0(500);
   setTimer1(500);
   setTimer2(500);
@@ -301,7 +301,7 @@ int main(void)
 		  }
 		  update7SEG(index_led++);
 		  if(index_led>=MAX_LED) index_led=0;
-		  setTimer1(100);
+		  setTimer1(250);
 	  }
 	  if(timer3_flag==1)
 	  {

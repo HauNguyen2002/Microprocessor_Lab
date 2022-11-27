@@ -301,7 +301,7 @@ int main(void)
 		  }
 		  update7SEG(index_led++);
 		  if(index_led>=MAX_LED) index_led=0;
-		  setTimer1(100);
+		  setTimer1(10);
 	  }
 	  if(timer3_flag==1)
 	  {
