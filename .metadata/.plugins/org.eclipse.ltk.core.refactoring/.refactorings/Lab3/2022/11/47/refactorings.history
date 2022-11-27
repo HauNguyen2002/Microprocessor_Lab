@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Lab3/Core/Inc/segment_u.h&apos; to &apos;segment.h&apos;" description="Rename resource &apos;segment_u.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Core/Inc/segment_u.h" name="segment.h" stamp="1668566904279" updateReferences="true"/>
+</session>

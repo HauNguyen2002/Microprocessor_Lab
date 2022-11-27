@@ -1,0 +1,4 @@
+fsm.c:15:6:fsm_run	8	static
+fsm.c:134:6:auto1_run	8	static
+fsm.c:195:6:auto2_run	8	static
+fsm.c:256:6:segment	8	static

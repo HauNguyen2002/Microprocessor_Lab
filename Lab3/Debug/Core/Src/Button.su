@@ -1,0 +1,6 @@
+Button.c:33:6:subMODEProcess	4	static
+Button.c:38:6:subINCProcess	4	static
+Button.c:43:6:subSETProcess	4	static
+Button.c:48:6:getMODEInput	8	static
+Button.c:76:6:getINCInput	8	static
+Button.c:112:6:getSETInput	8	static
